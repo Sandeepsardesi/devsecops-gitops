@@ -4,19 +4,22 @@ metadata:
   name: devsecops-app
   labels:
     app: devsecops-app
+    version: v1
 spec:
   replicas: 3
   selector:
     matchLabels:
       app: devsecops-app
+      version: v1
   template:
     metadata:
       labels:
         app: devsecops-app
+        version: v1
     spec:
       containers:
       - name: devsecops-app
-        image: sandeepsardesi/devsecops-demo:latest
+        image: sandeepsardesi/devsecops-demo:v1
         ports:
         - containerPort: 5000
 
